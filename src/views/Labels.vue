@@ -1,12 +1,13 @@
 <template>
-  <div>Labels
-    <Nav/>
+  <div>
+    <Layout>
+      <p>Labels</p>
+    </Layout>
   </div>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
