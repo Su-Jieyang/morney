@@ -3,16 +3,18 @@
     <Layout class-prefix="layout">
       <Tags />
       <Notes />
+      <Types />
     </Layout>
   </div>
 </template>
 
 <script>
+import Types from "@/components/Money/Types.vue";
 import Notes from "@/components/Money/Notes.vue";
 import Tags from "@/components/Money/Tags.vue";
 export default {
   name: "Money",
-  components: { Tags, Notes },
+  components: { Tags, Notes, Types },
 };
 </script>`
 
