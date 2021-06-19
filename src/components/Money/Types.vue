@@ -11,16 +11,10 @@
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 
-@Component({
-  props: {
-    propMessage: String,
-  },
-})
+@Component
 export default class Types extends Vue {
   type = "-"; //'-'表示支出，'+'表示收入
-  hellowMsg = "Hellow," + this.propMessage;
   selectType(type: string) {
-    //type只能是+或-
     if (type !== "+" && type !== "-") {
       throw new Error("type is unknow");
     }
