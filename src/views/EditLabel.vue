@@ -43,7 +43,9 @@ export default class EditLabel extends Vue {
   }
   update(name: string) {
     if (this.tag) {
-      tagListModel.update(this.tag.id, name);
+      if (name) {
+        tagListModel.update(this.tag.id, name);
+      }
     }
   }
   remove() {
