@@ -22,36 +22,32 @@
 <script lang='ts'>
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import tagListModel from "@/models/tagListModel";
 import FormItem from "@/components/Money/FormItem.vue";
 import Button from "@/components/Button.vue";
+import { Tag } from "@/recordItem";
 
 @Component({
   components: { FormItem, Button },
 })
 export default class EditLabel extends Vue {
-  tag?: { id: string; name: string } = undefined;
+  tag?: Tag = undefined;
   created() {
-    const id = this.$route.params.id;
-    const tags = window.tagList;
-    const tag = tags.filter((t) => t.id === id)[0];
-    if (tag) {
-      this.tag = tag;
-    } else {
+    this.tag = window.findTag(this.$route.params.id);
+    if (!this.tag) {
       this.$router.replace("/404");
     }
   }
   update(name: string) {
     if (this.tag) {
       if (name) {
-        tagListModel.update(this.tag.id, name);
+        window.updateTag(this.tag.id, name);
       }
     }
   }
   remove() {
     if (this.tag) {
       if (confirm("确认删除该标签？") == true) {
-        if (tagListModel.remove(this.tag.id)) {
+        if (window.removeTag(this.tag.id)) {
           this.$router.back();
         } else {
           window.alert("删除失败");
