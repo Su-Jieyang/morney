@@ -15,6 +15,7 @@ module.exports = {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "@typescript-eslint/no-var-requires": 0,
+    // "no-empty": 1, //块语句中的内容不能为空
   },
   overrides: [
     {
