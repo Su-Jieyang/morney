@@ -30,31 +30,27 @@ import { Tag } from "@/recordItem";
   components: { FormItem, Button },
 })
 export default class EditLabel extends Vue {
-  tag?: Tag = undefined;
+  get tag() {
+    return this.$store.state.currentTag;
+  }
   created() {
-    //TODO
-    // this.tag = store.findTag(this.$route.params.id);
+    const id = this.$route.params.id;
+    this.$store.commit("setCurrentTag", id);
     if (!this.tag) {
       this.$router.replace("/404");
     }
   }
   update(name: string) {
     if (this.tag) {
-      //TODO
-      // if (name) {
-      //   store.updateTag(this.tag.id, name);
-      // }
+      if (name) {
+        this.$store.commit("updateTag", { id: this.tag.id, name });
+      }
     }
   }
   remove() {
     if (this.tag) {
       if (confirm("确认删除该标签？") == true) {
-        //TODO
-        // if (store.removeTag(this.tag.id)) {
-        //   this.$router.back();
-        // } else {
-        //   window.alert("删除失败");
-        // }
+        this.$store.commit("removeTag", this.tag.id);
       }
     }
   }
