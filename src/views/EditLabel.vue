@@ -24,7 +24,6 @@ import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import FormItem from "@/components/Money/FormItem.vue";
 import Button from "@/components/Button.vue";
-import { Tag } from "@/recordItem";
 
 @Component({
   components: { FormItem, Button },
@@ -35,6 +34,7 @@ export default class EditLabel extends Vue {
   }
   created() {
     const id = this.$route.params.id;
+    this.$store.commit("fetchTags");
     this.$store.commit("setCurrentTag", id);
     if (!this.tag) {
       this.$router.replace("/404");
