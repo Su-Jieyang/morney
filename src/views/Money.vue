@@ -11,7 +11,7 @@
           @update:value="onUpdateNotes"
         />
       </div>
-      <Tags />
+      <Tags @update:value="onUpdateTags" />
     </Layout>
   </div>
 </template>
@@ -42,6 +42,9 @@ export default class Money extends Vue {
   }
   onUpdateNotes(value: string) {
     this.record.notes = value;
+  }
+  onUpdateTags(value: string[]) {
+    this.record.tags = value;
   }
   saveRecord() {
     this.$store.commit("createRecord", this.record);
