@@ -9,6 +9,7 @@
       classPrefix="interval"
       :dataSource="intervalList"
       :value.sync="interval"
+      height="48px"
     />
     <div>
       type:{{ type }}
@@ -47,8 +48,8 @@ export default class Statistics extends Vue {
       }
     }
   }
-  .interval-tabs-item {
-    height: 48px;
-  }
+  // .interval-tabs-item {
+  //   height: 48px;
+  // }
 }
 </style>
