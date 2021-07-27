@@ -21,7 +21,7 @@ import FormItem from "@/components/Money/FormItem.vue";
 import Tags from "@/components/Money/Tags.vue";
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import { RecordItem } from "@/recordItem";
+import { RecordItem } from "@/customExport";
 import Tabs from "@/components/Tabs.vue";
 import recordTypeList from "@/constants/recordTypeList";
 
@@ -55,8 +55,8 @@ export default class Money extends Vue {
 }
 </script>
 
-<style lang="scss">
-.layout-content {
+<style lang="scss" scoped>
+::v-deep .layout-content {
   display: flex;
   flex-direction: column-reverse;
 }
