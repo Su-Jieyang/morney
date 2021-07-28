@@ -1,7 +1,6 @@
 <template>
   <div>
     <Layout class-prefix="layout">
-      {{ record }}
       <NumberPad :value.sync="record.amount" @submit="saveRecord" />
       <Tabs :data-source="recordTypeList" :value.sync="record.type" />
       <div class="notes">
@@ -21,7 +20,7 @@ import FormItem from "@/components/Money/FormItem.vue";
 import Tags from "@/components/Money/Tags.vue";
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import { RecordItem } from "@/customExport";
+import { RecordItem, Tag } from "@/customExport";
 import Tabs from "@/components/Tabs.vue";
 import recordTypeList from "@/constants/recordTypeList";
 
@@ -46,7 +45,7 @@ export default class Money extends Vue {
   onUpdateNotes(value: string) {
     this.record.notes = value;
   }
-  onUpdateTags(value: string[]) {
+  onUpdateTags(value: Tag[]) {
     this.record.tags = value;
   }
   saveRecord() {
