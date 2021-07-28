@@ -42,7 +42,7 @@ import dayjs from "dayjs";
 })
 export default class Statistics extends Vue {
   tagString(tags: Tag[]) {
-    const a = tags.map((tag) => tag.name).join(",");
+    const a = tags.map((tag) => tag.name).join("，");
     return tags.length === 0 ? "无" : a;
   }
 
