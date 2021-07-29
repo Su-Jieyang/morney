@@ -58,7 +58,7 @@ export default class NumberPad extends Vue {
     this.output = "0";
   }
   ok() {
-    if (this.output === "0") {
+    if (parseFloat(this.output) === 0) {
       alert("金额为0，请重新输入");
     } else {
       const number = parseFloat(this.output);
