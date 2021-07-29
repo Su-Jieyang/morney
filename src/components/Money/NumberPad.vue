@@ -64,7 +64,10 @@ export default class NumberPad extends Vue {
       const number = parseFloat(this.output);
       this.$emit("update:value", number);
       this.$emit("submit", number);
-      this.output = "0";
+      console.log(this.value);
+      if (this.value !== 0) {
+        this.output = "0";
+      }
     }
   }
 }
