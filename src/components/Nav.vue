@@ -22,6 +22,7 @@ nav {
   @extend %outerShadow;
   display: flex;
   font-size: 12px;
+  background: white;
   > .item {
     padding: 2px;
     width: 33.33333%;
@@ -35,7 +36,7 @@ nav {
     }
   }
   > .item.selected {
-    color: $color-highlight;
+    color: #722ed1;
   }
 }
 </style>

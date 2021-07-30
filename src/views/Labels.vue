@@ -29,7 +29,7 @@ import TagHelper from "@/mixins/TagHelper";
   components: { Button },
 })
 export default class Labels extends mixins(TagHelper) {
-  get tags(){
+  get tags() {
     return this.$store.state.tagList;
   }
   beforeCreate() {
@@ -58,7 +58,7 @@ export default class Labels extends mixins(TagHelper) {
   }
 }
 .createTag {
-  background: #767676;
+  background: #722ed1;
   color: white;
   border-radius: 4px;
   border: none;
