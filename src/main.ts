@@ -22,3 +22,6 @@ window.onload = function () {
     window.scrollTo(0, 100), 0
   })
 }
+if (document.documentElement.clientWidth > 500) {
+  window.alert('请使用手机打开页面，浏览效果会更好')
+}
