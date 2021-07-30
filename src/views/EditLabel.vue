@@ -49,13 +49,14 @@ export default class EditLabel extends Vue {
   }
   remove() {
     if (this.currentTag) {
-      if (confirm("确认删除该标签？") == true) {
-        this.$store.commit("removeTag", this.currentTag.id);
-      }
+      // if (confirm("确认删除该标签？") == true) {
+      //   this.$store.commit("removeTag", this.currentTag.id);
+      // }
+      this.$store.commit("removeTag", this.currentTag.id);
     }
   }
   goBack() {
-    this.$router.back();
+    this.$router.push("/labels");
   }
 }
 </script>

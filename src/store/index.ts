@@ -80,7 +80,7 @@ const store = new Vuex.Store({
       if (index >= 0) {
         state.tagList.splice(index, 1)
         store.commit('saveTags')
-        router.back()
+        router.replace("/labels")
       } else (window.alert('删除失败'))
     },
   },
